@@ -1,0 +1,23 @@
+{% if form.errors %}
+{{form.errors}}
+{% endif %}
+{% from "_errors.html" import render_field %}
+<form method="post">
+    <h1>{{title}}</h1>
+    {{render_field(form.csrf_token)}}
+    {{render_field(form.nome.label)}}
+    {{render_field(form.nome)}}
+    {{render_field(form.login.label)}}
+    {{render_field(form.login)}}
+    {{render_field(form.altura.label)}}
+    {{render_field(form.altura)}}
+    {{render_field(form.idade.label)}}
+    {{render_field(form.idade)}}
+    {{render_field(form.email.label)}}
+    {{render_field(form.email)}}
+    {{render_field(form.senha.label)}}
+    {{render_field(form.senha)}}
+    {{render_field(form.senha_confirma.label)}}
+    {{render_field(form.senha_confirma)}}
+    {{render_field(form.submit)}}
+</form>
