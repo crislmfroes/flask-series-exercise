@@ -12,3 +12,6 @@ db = SQLAlchemy(app)
 
 from app.controllers import *
 from app.models.usuario.model import User
+from app.models.serie.model import Serie
+from app.models.temporada.model import Temporada
+from app.models.episodio.model import Episodio
