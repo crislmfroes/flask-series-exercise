@@ -17,6 +17,7 @@ Listagem de Séries
       <th scope="row">{{serie.cod}}</th>
       <td>{{serie.titulo}}</td>
       <td>
+        <a class="btn btn-primary" href={{url_for('serie.deletar', cod=serie.cod)}}>Deletar</a>
       </td>
     </tr>
     {% endfor %}
