@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% block title %}
+Listagem de Séries
+{% endblock %}
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Cod</th>
+      <th scope="col">Título</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for serie in series %}
+    <tr>
+      <th scope="row">{{serie.cod}}</th>
+      <td>{{serie.titulo}}</td>
+      <td>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a class="btn btn-primary" href={{url_for('serie.cadastro')}}>Cadastro</a>
+{% endblock %}

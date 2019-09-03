@@ -7,4 +7,4 @@ class Serie(db.Model):
     titulo = db.Column(db.String(100))
     cod_usuario = db.Column(db.Integer, db.ForeignKey('usuario.cod'), nullable=False)
 
-    temporadas = db.relationship('temporada', backref='serie', lazy=True)
+    temporadas = db.relationship('Temporada', backref='serie', lazy=True)

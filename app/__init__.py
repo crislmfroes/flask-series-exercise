@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -15,3 +15,12 @@ from app.models.usuario.model import User
 from app.models.serie.model import Serie
 from app.models.temporada.model import Temporada
 from app.models.episodio.model import Episodio
+
+@app.before_request
+def filtra_logado():
+    if session.get('logado') != True and request.endpoint not in ('usuario.login', 'usuario.cadastro'):
+        return redirect(url_for('usuario.login'))
+
+@app.before_first_request
+def cria_bd():
+    db.create_all()

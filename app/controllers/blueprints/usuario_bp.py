@@ -26,7 +26,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(login=form.login.data).first()
-        if user.check_senha(form.senha.data):
+        if user and user.check_senha(form.senha.data):
             session['logado'] = True
             session['user'] = user.cod
             session['nome'] = user.nome

@@ -14,7 +14,7 @@ class User(db.Model):
     email = db.Column(db.String(80))
     senha = db.Column(db.String(128))
 
-    series = db.relationship('serie', backref='usuario', lazy=True)
+    series = db.relationship('Serie', backref='usuario', lazy=True)
 
     def set_senha(self, senha):
         self.senha = generate_password_hash(senha)
